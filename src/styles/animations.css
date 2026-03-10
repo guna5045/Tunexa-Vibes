@@ -1,0 +1,50 @@
+/* Reusable Animations */
+
+.quote-banner {
+  font-size: 1.1rem;
+  text-align: center;
+  color: #e4e4e4;
+  letter-spacing: 0.03em;
+  animation: quoteFade 1.2s ease;
+}
+
+@keyframes quoteFade {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageFade 0.4s ease;
+}
+
+@keyframes pageFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.soundwave span {
+  display: inline-block;
+  width: 4px;
+  height: 20px;
+  margin: 0 2px;
+  background: #8a8aff;
+  animation: wave 1.2s infinite ease-in-out;
+}
+
+@keyframes wave {
+  0% { transform: scaleY(0.4); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.4); }
+}

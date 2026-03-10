@@ -1,0 +1,33 @@
+/* Component Styles */
+
+.vibe-card {
+  transition: all 0.3s ease;
+}
+
+.vibe-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(120, 120, 255, 0.3);
+}
+
+.buy-coffee {
+  background: linear-gradient(45deg, #FFDD00, #FBB03B, #FFDD00);
+  background-size: 200% 200%;
+  animation: shimmer 4s ease infinite;
+  color: #000;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(255, 221, 0, 0.4);
+  transform: scale(1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buy-coffee:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 221, 0, 0.6);
+}

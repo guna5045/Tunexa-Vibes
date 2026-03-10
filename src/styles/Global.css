@@ -1,0 +1,142 @@
+@import './animations.css';
+@import './components.css';
+
+:root {
+  --bg-dark: #0a0a0a;
+  --bg-card: #141414;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-glow: rgba(138, 43, 226, 0.6);
+  --accent-gradient: linear-gradient(135deg, #8a2be2, #4b0082);
+  --font-main: 'Inter', sans-serif;
+  --transition-slow: 0.8s ease;
+  --transition-medium: 0.4s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at top, #1a1a2e, #0d0d12);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 80px;
+    /* Space for fixed bottom elements on mobile */
+  }
+
+  /* Header adjustments */
+  header {
+    padding: 15px 20px !important;
+  }
+
+  /* Spotlight adjustments */
+  .spotlight-card h1 {
+    font-size: 2.5rem !important;
+  }
+
+  /* Song Detail adjustments */
+  .song-detail-container {
+    padding: 0 15px !important;
+  }
+
+  /* Buy Me Coffee adjustment for mobile */
+  .buy-me-coffee-card {
+    bottom: 20px !important;
+    right: 50% !important;
+    /* Center horizontally? Or keep right but smaller? User said "bottom center or bottom-right". Let's try bottom-right but ensure it doesn't overlap Contact. */
+    right: 20px !important;
+    /* Actually user said "Mobile: bottom center or bottom-right". 
+       Let's stick to right but ensure Contact (left) doesn't overlap.
+       And ensure it doesn't cover content. 
+       Let's make it compact text on mobile if needed. 
+    */
+    padding: 10px 15px !important;
+  }
+
+  .buy-me-coffee-card span {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+
+  /* Smaller mobile adjustments */
+  h1 {
+    font-size: 2rem !important;
+  }
+
+  .buy-me-coffee-card {
+    /* On very small screens, maybe just the icon? Or stack? 
+         Let's keep it visible but maybe move it up slightly if footer is tall?
+         User said "Never blocks lyrics".
+         Lyrics have padding bottom.
+      */
+    bottom: 90px !important;
+    /* Move up above footer mechanics if sticky, but footer is normal flow. */
+    bottom: 25px !important;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--transition-medium) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
